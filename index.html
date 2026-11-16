@@ -247,7 +247,11 @@ function syncSoundButton(){
   soundToggle.textContent=soundEnabled?'🔊 SOUND ON':'🔇 SOUND OFF';
   soundToggle.setAttribute('aria-pressed',String(soundEnabled));
 }
-function stopSpinAudio(){spinAudio.pause();try{spinAudio.currentTime=0;}catch(e){}}
+let wheelTickTimer=null,wheelTickContext=null,wheelTickLastAngle=null,wheelTickTotal=0,wheelTickNext=0;
+function readWheelAngle(){const tr=getComputedStyle($('wheelRotor')).transform;if(!tr||tr==='none')return 0;const m=tr.match(/^matrix\\(([^)]+)\\)$/);if(!m)return 0;const a=m[1].split(',').map(Number);return Math.atan2(a[1],a[0])*180/Math.PI;}
+function makeWheelTick(){if(!soundEnabled)return;try{if(!wheelTickContext)wheelTickContext=new (window.AudioContext||window.webkitAudioContext)();if(wheelTickContext.state==='suspended')wheelTickContext.resume();const t=wheelTickContext.currentTime,osc=wheelTickContext.createOscillator(),gain=wheelTickContext.createGain();osc.type='triangle';osc.frequency.setValueAtTime(1450,t);osc.frequency.exponentialRampToValueAtTime(720,t+0.022);gain.gain.setValueAtTime(0.0001,t);gain.gain.exponentialRampToValueAtTime(0.16,t+0.002);gain.gain.exponentialRampToValueAtTime(0.0001,t+0.035);osc.connect(gain);gain.connect(wheelTickContext.destination);osc.start(t);osc.stop(t+0.04);}catch(e){}}
+function startWheelTicks(){stopSpinAudio();if(!soundEnabled)return;wheelTickLastAngle=readWheelAngle();wheelTickTotal=0;wheelTickNext=45;wheelTickTimer=setInterval(()=>{const angle=readWheelAngle();let delta=angle-wheelTickLastAngle;if(delta< -180)delta+=360;else if(delta>180)delta-=360;if(delta<0)delta=0;wheelTickTotal+=delta;wheelTickLastAngle=angle;while(wheelTickTotal>=wheelTickNext){makeWheelTick();wheelTickNext+=45;}},12);}
+function stopSpinAudio(){if(wheelTickTimer){clearInterval(wheelTickTimer);wheelTickTimer=null;}spinAudio.pause();try{spinAudio.currentTime=0;}catch(e){}}
 function playResultAudio(audio){
   if(!soundEnabled)return;
   try{audio.currentTime=0;const p=audio.play();if(p&&p.catch)p.catch(()=>{});}catch(e){}
@@ -275,7 +279,7 @@ $('spin').onclick=async()=>{
     await lockRef(uid).set({expiresAt});
     $('hint').textContent='Your wheel is spinning...';
     const selected=pick();if(!selected){stopSpinAudio();await lockRef(uid).remove();busy=false;$('spin').disabled=true;$('spin').textContent='NO ACTIVE OFFERS';$('hint').textContent='Please ask shop staff to turn on at least one offer in Admin.';return;}
-    if(soundEnabled){try{spinAudio.currentTime=0;const soundPromise=spinAudio.play();if(soundPromise&&soundPromise.catch)soundPromise.catch(()=>{});}catch(e){}}
+    if(soundEnabled){startWheelTicks();}
     const index=settings.offers.indexOf(selected);
     const targetOffset=(360-(index*45))%360;
     const currentOffset=((rotation%360)+360)%360;
