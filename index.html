@@ -81,7 +81,7 @@ footer{text-align:center;color:#7f9098;font-size:11px;letter-spacing:2px;margin-
     <button class="prize-close" id="prizeClose" type="button" aria-label="Close result">×</button>
     <svg class="prize-gift" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#ffd04d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M60 28C27 -5 10 20 28 34c9 7 22 2 32-6 10 8 23 13 32 6C110 20 93-5 60 28Z"/><path d="M13 47h94v18H13z" fill="#ffc42f"/><path d="M20 68h80v43H20z" fill="#ffc42f" stroke="none"/><path d="M55 68v43M65 68v43"/></g><path d="M60 47v64" stroke="#071d24" stroke-width="6"/></svg>
     <h2 class="prize-congrats" id="prizeTitle">Congratulations!</h2>
-    <div class="prize-won">YOU WON</div>
+    <div class="prize-won" id="prizeSubtitle">YOU WON</div>
     <div class="prize-value" id="prizeValue">5% OFF</div>
     <div class="prize-shop">SONU FISH CENTER</div>
     <p class="prize-copy">Show this result at the shop<br>to claim your offer.</p>
@@ -211,7 +211,15 @@ function showSavedResult(){
   const saved=localStorage.getItem('spinwin_demo_result_v2');
   if(saved){$('hint').textContent=saved==='BAD LUCK'?'Better luck next time!':'Please show this result to the shop staff.'}
 }
-function showPrizePopup(prize){$('prizeValue').textContent=prize;$('prizeOverlay').classList.add('show');document.body.style.overflow='hidden';$('prizeOk').focus();}
+function showPrizePopup(prize){
+  const isBadLuck=String(prize).trim().toUpperCase()==='BAD LUCK';
+  $('prizeTitle').textContent=isBadLuck?'Better Luck Next Time!':'Congratulations!';
+  $('prizeSubtitle').textContent=isBadLuck?'NO PRIZE THIS TIME':'YOU WON';
+  $('prizeValue').textContent=prize;
+  $('prizeOverlay').classList.add('show');
+  document.body.style.overflow='hidden';
+  $('prizeOk').focus();
+}
 function closePrizePopup(){$('prizeOverlay').classList.remove('show');document.body.style.overflow='';}
 $('prizeClose').onclick=closePrizePopup;$('prizeOk').onclick=closePrizePopup;
 $('prizeOverlay').addEventListener('click',e=>{if(e.target===$('prizeOverlay'))closePrizePopup();});
