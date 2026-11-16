@@ -76,7 +76,7 @@ function setSpinLocked(locked,remaining){
           if(lock)await lockRef(currentUser.uid).remove();
         }
         localStorage.removeItem('spinwin_demo_result_v2');
-        localStorage.removeItem('spinwin_demo_rotation_v3');
+    
         $('result').textContent='Your offer will appear here';
         busy=false;setSpinLocked(false,0);
         $('hint').textContent='Your 30-second wait is over. You can spin again!';
