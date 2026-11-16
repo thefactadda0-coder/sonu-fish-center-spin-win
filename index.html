@@ -154,6 +154,9 @@ function watchOwnLock(uid){
   if(ownLockUnsubscribe){ownLockUnsubscribe();ownLockUnsubscribe=null;}
   const ref=lockRef(uid);
   const handler=snap=>{
+    // While a spin is in progress, ignore the lock event created by this
+    // same spin. The spin flow will apply the locked state after animation.
+    if(busy)return;
     const lock=snap.val();
     if(lock&&Number(lock.expiresAt)>Date.now()){
       setSpinLocked(true,Number(lock.expiresAt)-Date.now());
@@ -228,6 +231,7 @@ $('spin').onclick=async()=>{
   if(busy)return;
   if(!remoteSettingsReady){$('hint').textContent='Loading game settings. Please try again in a moment.';return;}
   busy=true;$('spin').disabled=true;$('spin').textContent='CONNECTING...';
+  $('hint').textContent='Your wheel is spinning...';
   try{
     await authReady;
     if(!currentUser)throw new Error('Customer sign-in is not ready. Please refresh.');
