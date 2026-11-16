@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111b22"><title>Sonu Fish Center | Spin Win</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
+:root{--gold:#ffd04d;--cream:#fff9e9;--muted:#c2d0d5;--gold-deep:#c88718;--teal:#071d24}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}button{outline:none;-webkit-tap-highlight-color:transparent}button:focus{outline:none}button:focus-visible{outline:2px solid #ffd04d;outline-offset:3px}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 5%,#174653 0,#0b2933 43%,#04151c 100%);color:var(--cream);font-family:'DM Sans',sans-serif}
+.app{width:min(100%,760px);margin:auto;min-height:100vh;padding:24px 22px 30px;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:14px;justify-content:space-between}.brand{display:flex;align-items:center;gap:14px;flex:1;min-width:0}.mark{width:54px;height:54px;flex:0 0 54px;border-radius:17px;background:#142a33;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;box-shadow:0 5px 15px #0004}.mark-star{font-size:26px;line-height:1;color:var(--gold);text-shadow:0 1px 8px #f5c45155}.brand-copy{display:flex;align-items:center;justify-content:center;min-width:0;flex:1}.eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;max-width:440px;min-height:54px;font-size:clamp(16px,3.8vw,25px);line-height:1.1;letter-spacing:1px;color:#fff4d2;font-weight:900;text-transform:uppercase;margin:0;padding:9px 14px;border:2px solid #ffd04d;border-radius:30px;background:linear-gradient(135deg,#10323c,#071c24 55%,#123641);box-shadow:0 0 0 2px #ffd04d35,0 0 16px #ffca3a25,0 5px 18px #0008;text-shadow:0 1px 3px #0008;white-space:nowrap;text-align:center}.eyebrow{overflow:hidden;justify-content:space-between}.eyebrow:before,.eyebrow:after{content:'★';font-size:1em;line-height:1;flex:0 0 auto;color:var(--gold);filter:none;text-shadow:0 0 6px #f5c45155}.marquee-window{display:block;flex:1;min-width:0;overflow:hidden;white-space:nowrap}.marquee-track{display:flex;width:max-content;align-items:center;animation:brand-marquee 13s linear infinite;will-change:transform}.marquee-item{display:block;flex:0 0 auto;padding-right:52px}.eyebrow:hover .marquee-track{animation-play-state:paused}@keyframes brand-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;transform:none;width:100%;justify-content:center}.marquee-item:not(:first-child){display:none}.marquee-item{padding:0}}.spin-title{display:flex;align-items:center;justify-content:center;gap:18px;color:var(--gold);font:900 21px Outfit;letter-spacing:4px;margin:18px 0 0}.spin-title:before,.spin-title:after{content:'';display:block;width:74px;height:2px;background:linear-gradient(90deg,transparent,#ffd04d);box-shadow:0 0 8px #ffd04d55;border-radius:3px}.spin-title:after{transform:scaleX(-1)}.admin-star{cursor:pointer;padding:0;border-radius:17px}.admin-link{border:1px solid #ffffff55;background:#ffffff0b;color:#e9edf0;border-radius:30px;padding:12px 17px;font-size:14px;flex:0 0 auto}
+.hero{text-align:center;margin:34px 0 34px}.kicker{color:#ffd04d;text-shadow:0 1px 12px #ffb92e55;font-size:clamp(12px,2.1vw,17px);font-weight:800;letter-spacing:4px}.hero h2{font:800 clamp(42px,8.5vw,60px)/1.02 Outfit;margin:28px 0 14px}.hero h2 span{color:var(--gold)}.hero p{font-size:clamp(16px,2.8vw,21px);color:var(--muted);margin:16px 0}
+.card{border:1px solid #8ed1d855;background:linear-gradient(145deg,#ffffff18,#0b303a88 70%,#ffffff0b);border-radius:36px;padding:30px 26px;box-shadow:0 20px 60px #0005}
+.wheel-wrap{width:min(82vw,540px);aspect-ratio:1;margin:3px auto 38px;position:relative;filter:drop-shadow(0 15px 22px #0008)}.wheel-svg{width:100%;height:100%;display:block;overflow:visible}.wheel-rotor{transform-origin:180px 180px;transition:transform 5s cubic-bezier(.12,.78,.12,1)}.wheel-label{font-family:Outfit, sans-serif;font-weight:900;font-size:11px;letter-spacing:.15px;fill:#302116;paint-order:stroke;stroke:#fff4;stroke-width:.7px;stroke-linejoin:round}.wheel-hub{filter:drop-shadow(0 3px 7px #0008)}.pointer{position:absolute;z-index:5;top:8px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:18px solid #fff4d4;filter:drop-shadow(0 3px 3px #0009)}
+.primary{display:block;width:min(100%,520px);margin:auto;border:0;border-radius:99px;padding:22px 24px;background:linear-gradient(105deg,#ffe27a 0%,#ffc43d 48%,#f29b25 100%);color:#21190c;font:900 clamp(19px,3.6vw,27px) Outfit;letter-spacing:1.4px;box-shadow:0 7px 0 #a45e13,0 12px 22px #0007,0 0 20px #ffc13d35,inset 0 1px 0 #fff4c7;cursor:pointer}.primary:disabled{opacity:.55;cursor:not-allowed}.hint{text-align:center;color:#bdc8cd;font-size:clamp(13px,2.4vw,18px);margin:22px 0 18px}
+.result{border:1.5px solid #ffd04d99;border-radius:15px;background:linear-gradient(135deg,#09232cdd,#061820ee);box-shadow:inset 0 0 18px #ffd04d0b,0 0 14px #ffd04d12;padding:13px;text-align:center;min-height:72px}.result small{display:block;color:var(--gold);font-size:9px;letter-spacing:2px;font-weight:800;margin-bottom:6px}.result strong{font:700 16px Outfit}
+footer{text-align:center;color:#7f9098;font-size:11px;letter-spacing:2px;margin-top:auto;padding-top:24px}.footer-message{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:nowrap;width:max-content;max-width:100%;margin:0 auto;padding:10px 24px;border:0;border-top:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);clip-path:none;font-size:13px;letter-spacing:1.4px;font-weight:800;line-height:1.2;background:linear-gradient(90deg,#0a222b,#102f38 50%,#0a222b);box-shadow:0 0 10px #ffd04d12}.footer-good{color:#fff;font-size:13px}.footer-divider{display:block;width:1.5px;height:18px;background:var(--gold);flex:0 0 1.5px}.footer-visit{color:var(--gold);font-size:13px}.admin-link{margin-top:14px;cursor:pointer}
+.overlay{position:fixed;inset:0;background:#000a;z-index:20;display:none;overflow:auto;padding:18px}.overlay.show{display:block}.modal{width:min(100%,520px);margin:20px auto;background:#17262f;border:1px solid #ffffff20;border-radius:22px;padding:20px;box-shadow:0 25px 80px #0009}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal h3{font:800 23px Outfit;margin:0}.close{background:#ffffff15;color:white;border:0;border-radius:50%;width:34px;height:34px;font-size:20px}.field{display:block;margin:13px 0}.field label{display:block;font-size:11px;color:#c4cdd1;margin-bottom:6px}.field input{width:100%;border:1px solid #ffffff2b;border-radius:10px;background:#0e1a21;color:white;padding:11px;outline:none}.offer-row{display:grid;grid-template-columns:minmax(0,1fr) 58px 44px 25px 14px;gap:7px;align-items:center;margin:9px 0}.offer-row input{min-width:0;width:100%;padding:9px;border-radius:9px;background:#0e1a21;color:white;border:1px solid #ffffff2b}.offer-row input[type=number]{width:62px}.offer-switch{position:relative;width:44px;height:26px;display:inline-block}.offer-switch input{opacity:0;width:0;height:0}.offer-switch .track{position:absolute;inset:0;border-radius:20px;background:#58636a;transition:.2s}.offer-switch .track:before{content:'';position:absolute;width:20px;height:20px;left:3px;top:3px;border-radius:50%;background:#fff;transition:.2s}.offer-switch input:checked+.track{background:#d9a936}.offer-switch input:checked+.track:before{transform:translateX(18px);background:#17232b}.offer-state{font-size:9px;color:#b9c4c9;text-align:center}.secondary{border:1px solid #ffffff2a;background:#ffffff0d;color:#f5e8c9;border-radius:10px;padding:10px 13px;cursor:pointer}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.reset-panel{margin-top:22px;padding:18px 16px 15px;border:1px solid #ffd04d55;border-radius:18px;background:linear-gradient(145deg,#102e38,#0d222b 72%);box-shadow:inset 0 1px 0 #ffffff0c,0 10px 24px #0003}.reset-topline{height:2px;width:100%;margin-bottom:16px;background:linear-gradient(90deg,transparent,#ffd04d,transparent);opacity:.85}.reset-heading{display:flex;align-items:center;gap:12px}.reset-icon{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:13px;border:1px solid #ffd04d66;background:#ffd04d12;color:var(--gold);font-size:25px}.reset-eyebrow{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:800;margin-bottom:3px}.reset-heading h3{font:800 19px Outfit;margin:0;color:#fff8e9}.reset-copy{font-size:13px;line-height:1.55;color:#c2d0d5;margin:13px 0 15px}.reset-button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border:1px solid #ffe28a;border-radius:13px;background:linear-gradient(100deg,#ffe27a,#ffc43d 55%,#f4a22b);color:#17232a;font:900 16px Outfit;letter-spacing:.7px;box-shadow:0 4px 0 #a45e13,0 8px 16px #0004,inset 0 1px 0 #fff6c9;cursor:pointer}.reset-button span{font-size:21px;line-height:1}.reset-button:active{transform:translateY(2px);box-shadow:0 2px 0 #a45e13,0 4px 10px #0004}.reset-footnote{font-size:10px;line-height:1.45;color:#91a5ad;text-align:center;margin:12px 0 0}.note{font-size:11px;line-height:1.5;color:#aebbc1}.qr{display:block;background:white;padding:10px;border-radius:12px;width:190px;height:190px;object-fit:contain;margin:12px auto}.status{font-size:12px;color:#f5c451;margin-top:10px}
+@media(max-width:420px){.app{padding:12px 14px 16px}.brand{gap:9px}.mark{width:40px;height:40px;flex-basis:40px;border-radius:14px}.mark-star{font-size:20px}.eyebrow{font-size:clamp(12px,3.25vw,15px);letter-spacing:.35px;gap:5px;padding:6px 5px;min-height:40px}.eyebrow:before,.eyebrow:after{font-size:1em}.admin-star{width:40px;height:40px;flex:0 0 40px;border-radius:14px}.admin-link{padding:9px 16px;font-size:11px}.spin-title{font-size:16px;letter-spacing:2.5px;gap:9px;margin-top:5px}.spin-title:before,.spin-title:after{width:42px}.hero{margin:15px 0 14px}.kicker{font-size:11px;letter-spacing:2.6px}.hero h2{font-size:clamp(34px,8.3vw,43px);margin:12px 0 7px;line-height:1}.hero p{font-size:15px;margin:8px 0}.card{padding:14px 12px;border-radius:26px}.wheel-wrap{width:min(76vw,440px);margin:0 auto 17px}.pointer{top:8px;border-left-width:8px;border-right-width:8px;border-top-width:16px}.primary{padding:15px 16px;font-size:20px}.hint{margin:12px 0 9px;font-size:13px}.result{padding:10px;min-height:62px}footer{padding-top:14px}}
+@media(max-height:780px) and (max-width:420px){.app{padding-top:8px}.hero{margin-top:10px;margin-bottom:10px}.hero h2{margin-top:9px}.wheel-wrap{width:min(70vw,390px);margin-bottom:13px}.card{padding:12px 10px}.primary{padding:13px 14px}.hint{margin:9px 0 7px}}
+</style></head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="mark" aria-label="Gold star"><span class="mark-star" aria-hidden="true">★</span></div><div class="brand-copy"><div class="eyebrow" id="shopBrand"><span class="marquee-window"><span class="marquee-track"><span class="marquee-item">SONU FISH CENTER</span><span class="marquee-item" aria-hidden="true">SONU FISH CENTER</span></span></span></div></div></div><button class="mark admin-star" id="adminOpen" aria-label="Open admin panel"><span class="mark-star" aria-hidden="true">★</span></button></header><div class="spin-title">SPIN WIN</div>
+<section class="hero"><div class="kicker">A LITTLE SURPRISE IS WAITING</div><h2>Ready to try<br><span>your luck?</span></h2><p>Tap the button and see what you get.</p></section>
+<section class="card"><div class="wheel-wrap"><div class="pointer"></div><svg class="wheel-svg" viewBox="0 0 360 360" role="img" aria-label="Spin and win prize wheel"><circle cx="180" cy="180" r="174" fill="#bd7e22"/><circle cx="180" cy="180" r="168" fill="#fff0c2"/><g id="wheelRotor" class="wheel-rotor"></g><g class="wheel-hub"><circle cx="180" cy="180" r="47" fill="#111d25" stroke="#ffe8ae" stroke-width="7"/><circle cx="180" cy="180" r="39" fill="url(#hubShade)"/><text x="180" y="176" text-anchor="middle" font-family="Outfit,sans-serif" font-size="16" font-weight="900" fill="#fff7e5">SPIN</text><text x="180" y="194" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="900" letter-spacing="2" fill="#f5c451">WIN</text></g><defs><radialGradient id="hubShade" cx="35%" cy="28%"><stop offset="0" stop-color="#344955"/><stop offset="1" stop-color="#111d25"/></radialGradient></defs></svg></div><button class="primary" id="spin" disabled>SPIN NOW&nbsp; ↗</button><div class="hint" id="hint">One spin. One surprise.</div><div class="result"><small>YOUR RESULT</small><strong id="result">Your offer will appear here</strong></div></section>
+<footer><div class="footer-message"><span class="footer-good">GOOD LUCK</span><span class="footer-divider" aria-hidden="true"></span><span class="footer-visit">VISIT AGAIN</span></div><button class="admin-link" id="adminOpenBottom" type="button">Admin</button></footer>
+</div>
+<div class="overlay" id="admin"><div class="modal"><div class="modal-head"><h3>SPIN WIN Admin</h3><button class="close" id="closeAdmin">×</button></div>
+<div id="login"><p class="note">Admin access is protected by Firebase email and password. Enter your admin login below.</p><div class="field"><label>Admin email</label><input id="adminEmail" type="email" autocomplete="username" placeholder="Admin email"></div><div class="field"><label>Admin password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Admin password"></div><button class="primary" id="loginBtn">ADMIN LOGIN</button><div class="status" id="loginStatus"></div></div>
+<div id="settings" hidden><p class="note">Edit offers and chance weights. These settings are saved in this browser only in this demo.</p>
+<div class="field"><label>Shop name (optional)</label><input id="shopName" placeholder="Your shop name"></div>
+<div class="field"><label>Wheel offers — offer, chance weight and ON/OFF switch</label><div id="offerRows"></div></div>
+<div class="field"><label>New admin PIN</label><input id="newPin" type="password" inputmode="numeric" placeholder="Change demo PIN (optional)"></div>
+<div class="actions"><button class="primary" id="save">SAVE SETTINGS</button></div>
+<section class="reset-panel" aria-labelledby="nextCustomerTitle">
+  <div class="reset-topline"></div>
+  <div class="reset-heading"><span class="reset-icon" aria-hidden="true">↻</span><div><div class="reset-eyebrow">NEXT CUSTOMER</div><h3 id="nextCustomerTitle">Allow another spin?</h3></div></div>
+  <p class="reset-copy">Kisi ek active customer ka lock hatane ke liye neeche button dabayein. Admin list se aap kisi bhi customer ko select karke unlock kar sakte hain.</p>
+  <button class="reset-button" id="reset" type="button"><span aria-hidden="true">↻</span> UNLOCK ONE CUSTOMER</button>
+  <p class="reset-footnote">This removes the first active customer lock from the shared database.</p>
+</section>
+<hr style="border-color:#ffffff20;margin:20px 0"><h3 style="font-size:17px">Customer Spin Locks</h3><p class="note">Active customer locks appear here. Unlock one customer or all customers remotely.</p><div id="lockList" class="note">Loading customer locks…</div><div class="actions"><button class="secondary" id="refreshLocks" type="button">REFRESH LIST</button><button class="secondary" id="unlockAll" type="button">UNLOCK ALL CUSTOMERS</button><button class="secondary" id="adminLogout" type="button">LOG OUT</button></div><div class="status" id="lockStatus"></div>
+<hr style="border-color:#ffffff20;margin:20px 0"><h3 style="font-size:17px">QR Code</h3><p class="note">Enter the public website address after hosting it.</p>
+<div class="field"><label>Website URL</label><input id="siteUrl" placeholder="https://your-site.example"></div><button class="secondary" id="makeQr">Generate QR</button><img class="qr" id="qr" alt="Website QR code" hidden><div class="note" id="qrNote"></div>
+</div></div></div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+<script>
+(()=>{
+const $=id=>document.getElementById(id),KEY='spinwin_demo_settings_v2',PLAY='spinwin_demo_played_v2';
+const firebaseConfig={apiKey:"AIzaSyDaX4GT1nSp5ZYIBWkR-nZZYNXlFUy1b5A",authDomain:"sonu-fish-center.firebaseapp.com",databaseURL:"https://sonu-fish-center-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"sonu-fish-center",storageBucket:"sonu-fish-center.firebasestorage.app",messagingSenderId:"941472653500",appId:"1:941472653500:web:4365cd57b690feabeaf0b9",measurementId:"G-02L0VD78FH"};
+firebase.initializeApp(firebaseConfig);const auth=firebase.auth(),db=firebase.database();
+const ADMIN_UID='Hfg45hNJ4wSjIdlViHq7my5GimW2';let currentUser=null,isAdmin=false,lockUnsubscribe=null;
+const authReady=auth.signInAnonymously().then(c=>{currentUser=c.user;return currentUser;}).catch(e=>{$('hint').textContent='Connection issue. Please refresh and try again.';console.error(e);throw e;});
+const lockRef=uid=>db.ref('locks/'+uid);
+async function clearExpiredOwnLock(uid){const s=await lockRef(uid).once('value');const v=s.val();if(v&&Number(v.expiresAt)<=Date.now())await lockRef(uid).remove();}
+let customerLockTimer=null;
+function setSpinLocked(locked,remaining){
+  if(customerLockTimer){clearTimeout(customerLockTimer);customerLockTimer=null;}
+  $('spin').disabled=locked||busy;
+  $('spin').textContent=locked?'SPIN ALREADY USED':'SPIN NOW ↗';
+  if(locked){
+    const wait=Math.max(0,Number(remaining)||0);
+    $('hint').textContent='You have already used your spin. It will unlock automatically when 30 seconds are complete.';
+    customerLockTimer=setTimeout(async()=>{
+      try{
+        if(currentUser){
+          const snap=await lockRef(currentUser.uid).once('value');
+          const lock=snap.val();
+          if(lock&&Number(lock.expiresAt)>Date.now()){
+            setSpinLocked(true,Number(lock.expiresAt)-Date.now());
+            return;
+          }
+          if(lock)await lockRef(currentUser.uid).remove();
+        }
+        localStorage.removeItem('spinwin_demo_result_v2');
+        $('result').textContent='Your offer will appear here';
+        busy=false;setSpinLocked(false,0);
+        $('hint').textContent='Your 30-second wait is over. You can spin again!';
+      }catch(e){
+        $('hint').textContent='Timer finished. Please refresh to check your spin.';
+      }
+    },wait+250);
+  }else{
+    $('hint').textContent='One spin. One surprise.';
+  }
+}
+
+const initial=['BAD LUCK','10% OFF','15% OFF','40% OFF','BAD LUCK','50% OFF','100% OFF','5% OFF'];
+const defaults={shop:'Sonu Fish Center',pin:'2468',offers:initial.map(text=>({text,weight:1,active:true}))};
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');return x?{...defaults,...x}:structuredClone(defaults)}catch{return structuredClone(defaults)}}
+let settings=load(),busy=false,rotation=0;settings.shop=(settings.shop||'Sonu Fish Center').trim();document.querySelectorAll('#shopBrand .marquee-item').forEach(el=>el.textContent=settings.shop);document.title=settings.shop+' | Spin Win';settings.offers=(settings.offers||[]).slice(0,8).map(o=>({...o,active:o.active!==false,weight:Math.max(1,Number(o.weight)||1)}));while(settings.offers.length<8)settings.offers.push({text:'NEW OFFER',weight:1,active:true});
+const palette=['#ffc83f','#ff7848'];
+const polar=(angle,r)=>{const a=angle*Math.PI/180;return {x:180+r*Math.sin(a),y:180-r*Math.cos(a)}};
+function draw(){
+  const rotor=$('wheelRotor');rotor.innerHTML='';
+  const offers=settings.offers.slice(0,8);
+  offers.forEach((offer,i)=>{
+    const start=i*45-22.5,end=start+45,p1=polar(start,158),p2=polar(end,158);
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',`M 180 180 L ${p1.x} ${p1.y} A 158 158 0 0 1 ${p2.x} ${p2.y} Z`);
+    path.setAttribute('fill',palette[i%2]);path.setAttribute('stroke','#fff0cf');path.setAttribute('stroke-width','1.5');
+    rotor.appendChild(path);
+    const pos=polar(i*45,111);
+    const label=document.createElementNS('http://www.w3.org/2000/svg','text');
+    label.setAttribute('x',pos.x);label.setAttribute('y',pos.y);label.setAttribute('text-anchor','middle');
+    label.setAttribute('dominant-baseline','middle');label.setAttribute('class','wheel-label');
+    label.setAttribute('font-size',offer.text.length>9?'16':'19');label.textContent=offer.text.toUpperCase();
+    rotor.appendChild(label);
+  });
+  const rim=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  rim.setAttribute('cx','180');rim.setAttribute('cy','180');rim.setAttribute('r','160');
+  rim.setAttribute('fill','none');rim.setAttribute('stroke','#fff1c9');rim.setAttribute('stroke-width','3');
+  rotor.appendChild(rim);
+  rotor.style.transform=`rotate(${rotation}deg)`;
+}
+function pick(){
+  const offers=settings.offers.slice(0,8).filter(o=>o.active!==false);
+  if(!offers.length)return null;
+  const total=offers.reduce((n,o)=>n+Math.max(1,+o.weight||1),0);
+  let r=Math.random()*total;
+  for(const o of offers){r-=Math.max(1,+o.weight||1);if(r<0)return o}
+  return offers[7];
+}
+function showSavedResult(){
+  const saved=localStorage.getItem('spinwin_demo_result_v2');
+  if(saved){$('result').textContent=saved;$('hint').textContent=saved==='BAD LUCK'?'Better luck next time!':'Please show this result to the shop staff.'}
+}
+$('spin').onclick=async()=>{
+  if(busy)return;
+  busy=true;$('spin').disabled=true;$('spin').textContent='CONNECTING...';
+  try{
+    await authReady;
+    if(!currentUser)throw new Error('Customer sign-in is not ready. Please refresh.');
+    $('spin').textContent='CHECKING...';
+    const uid=currentUser.uid;await clearExpiredOwnLock(uid);
+    const existing=await lockRef(uid).once('value');const lock=existing.val();
+    if(lock&&Number(lock.expiresAt)>Date.now()){busy=false;setSpinLocked(true,Number(lock.expiresAt)-Date.now());return;}
+    const expiresAt=Date.now()+30000;
+    await lockRef(uid).set({expiresAt});
+    $('hint').textContent='Your wheel is spinning...';
+    const selected=pick();if(!selected){await lockRef(uid).remove();busy=false;$('spin').disabled=true;$('spin').textContent='NO ACTIVE OFFERS';$('hint').textContent='Please ask shop staff to turn on at least one offer in Admin.';return;}
+    const index=settings.offers.indexOf(selected);
+    const targetOffset=(360-(index*45))%360;
+    const currentOffset=((rotation%360)+360)%360;
+    const finalOffset=(targetOffset-currentOffset+360)%360;
+    rotation+=360*6+finalOffset;
+    $('wheelRotor').style.transform=`rotate(${rotation}deg)`;
+    setTimeout(()=>{$('result').textContent=selected.text;$('hint').textContent=selected.text==='BAD LUCK'?'Better luck next time!':'Please show this result to the shop staff.';localStorage.setItem('spinwin_demo_result_v2',selected.text);localStorage.setItem('spinwin_demo_rotation_v3',String(rotation));$('spin').textContent='SPIN ALREADY USED';busy=false;setSpinLocked(true,expiresAt-Date.now());},5100);
+  }catch(e){console.error(e);busy=false;$('spin').disabled=false;$('spin').textContent='TRY AGAIN';$('hint').textContent='Could not connect to the game server. Please try again.';}
+};
+const openAdmin=()=>$('admin').classList.add('show');$('adminOpen').onclick=openAdmin;$('adminOpenBottom').onclick=openAdmin;$('closeAdmin').onclick=()=>$('admin').classList.remove('show');
+$('loginBtn').onclick=async()=>{const email=$('adminEmail').value.trim(),password=$('adminPassword').value;if(!email||!password){$('loginStatus').textContent='Enter admin email and password.';return;}$('loginBtn').disabled=true;$('loginStatus').textContent='Signing in…';try{const cred=await auth.signInWithEmailAndPassword(email,password);if(cred.user.uid!==ADMIN_UID){await auth.signOut();throw new Error('This account is not authorized as admin.');}isAdmin=true;currentUser=cred.user;$('login').hidden=true;$('settings').hidden=false;$('shopName').value=settings.shop||'';renderRows();watchLocks();}catch(e){$('loginStatus').textContent=e.code==='auth/invalid-credential'?'Incorrect email or password.':(e.message||'Admin login failed.');}finally{$('loginBtn').disabled=false;}};
+function renderRows(){const box=$('offerRows');box.innerHTML='';settings.offers.forEach((o,i)=>{const row=document.createElement('div');row.className='offer-row';const t=document.createElement('input');t.value=o.text;t.setAttribute('aria-label','Offer text');t.oninput=()=>o.text=t.value;const w=document.createElement('input');w.type='number';w.min=1;w.value=o.weight;w.title='Chance weight';w.oninput=()=>o.weight=Math.max(1,+w.value||1);const sw=document.createElement('label');sw.className='offer-switch';sw.title='Turn this offer on or off';const cb=document.createElement('input');cb.type='checkbox';cb.checked=o.active!==false;cb.setAttribute('aria-label','Offer '+(i+1)+' active');cb.onchange=()=>{o.active=cb.checked;state.textContent=cb.checked?'ON':'OFF';draw()};const track=document.createElement('span');track.className='track';sw.append(cb,track);const state=document.createElement('span');state.className='offer-state';state.textContent=cb.checked?'ON':'OFF';const fixed=document.createElement('span');fixed.style.cssText='font-size:10px;color:#aebbc1;text-align:center';fixed.textContent=''+(i+1);row.append(t,w,sw,state,fixed);box.append(row)})}
+$('save').onclick=()=>{settings.shop=$('shopName').value.trim()||'Sonu Fish Center';document.querySelectorAll('#shopBrand .marquee-item').forEach(el=>el.textContent=settings.shop);document.title=settings.shop+' | Spin Win';if($('newPin').value.trim())settings.pin=$('newPin').value.trim();localStorage.setItem(KEY,JSON.stringify(settings));draw();const activeCount=settings.offers.filter(o=>o.active!==false).length;if(!activeCount){$('spin').disabled=true;$('spin').textContent='NO ACTIVE OFFERS';$('hint').textContent='Turn on at least one offer in Admin.'}else if(!localStorage.getItem(PLAY)){$('spin').disabled=false;$('spin').textContent='SPIN NOW ↗';$('hint').textContent=activeCount+' active offer(s) available.'}alert('Offer switches and settings saved on this device.')};
+$('reset').onclick=async()=>{try{if(!isAdmin)throw new Error('Admin login required.');const snap=await db.ref('locks').once('value');const all=snap.val()||{};for(const [uid,v] of Object.entries(all)){if(v&&Number(v.expiresAt)>Date.now()){await db.ref('locks/'+uid).remove();break;}}$('lockStatus').textContent='One active customer lock was cleared.';refreshLockList();}catch(e){$('lockStatus').textContent=e.message||'Could not unlock customer.';}};
+function watchLocks(){if(lockUnsubscribe)lockUnsubscribe();const ref=db.ref('locks');const handler=()=>refreshLockList();ref.on('value',handler,e=>{$('lockList').textContent='Unable to load locks: '+e.message;});lockUnsubscribe=()=>ref.off('value',handler);refreshLockList();}
+async function refreshLockList(){if(!isAdmin)return;try{const snap=await db.ref('locks').once('value'),all=snap.val()||{},now=Date.now();const entries=Object.entries(all).filter(([uid,v])=>v&&Number(v.expiresAt)>now);const expired=Object.entries(all).filter(([uid,v])=>!v||Number(v.expiresAt)<=now);for(const [uid] of expired){db.ref('locks/'+uid).remove().catch(()=>{});}if(!entries.length){$('lockList').textContent='No active customer locks.';return;}const box=$('lockList');box.innerHTML='';entries.forEach(([uid,v],i)=>{const row=document.createElement('div');row.style.cssText='display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #ffffff20';const label=document.createElement('span');label.textContent='Customer '+(i+1)+' · '+Math.max(1,Math.ceil((Number(v.expiresAt)-now)/1000))+' sec left';const btn=document.createElement('button');btn.className='secondary';btn.type='button';btn.textContent='UNLOCK';btn.onclick=async()=>{try{await db.ref('locks/'+uid).remove();$('lockStatus').textContent='Customer unlocked.';refreshLockList();}catch(e){$('lockStatus').textContent='Unlock failed: '+e.message;}};row.append(label,btn);box.append(row);});}catch(e){$('lockList').textContent='Unable to load locks: '+e.message;}}
+$('refreshLocks').onclick=refreshLockList;$('unlockAll').onclick=async()=>{if(!isAdmin)return;try{await db.ref('locks').remove();$('lockStatus').textContent='All customer locks cleared.';refreshLockList();}catch(e){$('lockStatus').textContent='Could not unlock all: '+e.message;}};
+$('adminLogout').onclick=async()=>{if(lockUnsubscribe)lockUnsubscribe();isAdmin=false;await auth.signOut();currentUser=null;$('settings').hidden=true;$('login').hidden=false;$('adminPassword').value='';$('loginStatus').textContent='Logged out.';try{const c=await auth.signInAnonymously();currentUser=c.user;}catch(e){console.error(e);}};
+$('makeQr').onclick=()=>{const url=$('siteUrl').value.trim();if(!/^https?:\/\//i.test(url)){$('qrNote').textContent='Enter a valid public URL beginning with https://';return}$('qr').src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(url);$('qr').hidden=false;$('qrNote').textContent='QR code created for '+url};
+rotation=0;draw();$('hint').textContent='One spin. One surprise.';authReady.then(async user=>{
+  await clearExpiredOwnLock(user.uid);
+  const snap=await lockRef(user.uid).once('value'),v=snap.val();
+  if(v&&Number(v.expiresAt)>Date.now()){
+    showSavedResult();
+    setSpinLocked(true,Number(v.expiresAt)-Date.now());
+  }else{
+    localStorage.removeItem('spinwin_demo_result_v2');
+    localStorage.removeItem('spinwin_demo_rotation_v3');
+    rotation=0;$('wheelRotor').style.transform='rotate(0deg)';
+    $('result').textContent='Your offer will appear here';
+    setSpinLocked(false,0);
+    $('hint').textContent='One spin. One surprise.';
+  }
+}).catch(e=>{
+  $('spin').disabled=true;$('spin').textContent='SPIN NOW ↗';
+  $('hint').textContent='Connection failed. Please check internet and refresh.';
+  console.error(e);
+});
+window.addEventListener('resize',()=>{});
+})();
+</script></body></html>
